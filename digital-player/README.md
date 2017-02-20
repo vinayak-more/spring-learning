@@ -1,0 +1,3 @@
+Using this project as a Third Party Jar for Spring starter Project.
+
+This project is plain Java maven project with JUnit testing so far...
