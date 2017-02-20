@@ -8,8 +8,10 @@ package com.soundsystem.config;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import com.soundsystem.SoundSystem;
+
 @Configuration
-@ComponentScan
+@ComponentScan(basePackageClasses={SoundSystem.class})
 public class CDPlayerConfig {
 
 }
