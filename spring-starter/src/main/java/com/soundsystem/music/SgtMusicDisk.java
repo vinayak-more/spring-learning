@@ -5,9 +5,11 @@
  */
 package com.soundsystem.music;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
+@Profile("prod")
 public class SgtMusicDisk implements CompactDist {
 
     private String title = "Sgt. Pepper's Lonely Hearts club Band";
