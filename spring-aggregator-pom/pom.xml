@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>spring-aggregator-pom</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>spring-aggregator-pom</name>
+  <description>spring-aggregator-pom</description>
+  <profiles>
+		<profile>
+			<id>all</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>../spring</module>
+				<module>../digital-player</module>
+				<module>../spring-di</module>
+				<module>../spring-di-profile</module>
+				<module>../spring-di-qualifier</module>
+			</modules>
+		</profile>
+		</profiles>
+</project>
