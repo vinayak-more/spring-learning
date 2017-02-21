@@ -7,4 +7,11 @@
   </parent>
   <artifactId>spring-di-profile</artifactId>
   <name>spring-di-profile</name>
+  <dependencies>
+		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>digital-player</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>
