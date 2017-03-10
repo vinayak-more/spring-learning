@@ -7,19 +7,20 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class Audience {
-	
+
 	@Pointcut("execution(** com.concert.performer.Performer.perform(..))")
-	public void performance(){}
-	
+	public void performance() {
+	}
+
 	@Around("performance()")
-	public String watchperFormance(ProceedingJoinPoint jp){
-		try{
+	public Object watchperFormance(ProceedingJoinPoint jp) {
+		try {
 			System.out.println("Silencing cell phones");
 			System.out.println("Taking seat");
-			String result=(String) jp.proceed();
+			Object result = jp.proceed();
 			System.out.println("CLAP CLAP CLAP!!!");
 			return result;
-		}catch(Exception e){
+		} catch (Exception e) {
 			System.out.println("Demanding a refund");
 		} catch (Throwable e) {
 			System.out.println("Demanding a refund");

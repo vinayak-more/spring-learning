@@ -18,6 +18,9 @@
 				<module>../spring-di</module>
 				<module>../spring-di-profile</module>
 				<module>../spring-di-qualifier</module>
+				<module>../spring-aop</module>
+				<module>../spring-aop-around</module>
+				<module>../spring-aop-audit</module>
 			</modules>
 		</profile>
 		</profiles>
