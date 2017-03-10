@@ -6,7 +6,7 @@
 		<artifactId>spring</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>spring-aop</artifactId>
-	<name>spring-aop</name>
-	<description>spring-aop</description>
+	<artifactId>spring-aop-around</artifactId>
+	<name>spring-aop-around</name>
+	<description>spring-aop-around</description>
 </project>
