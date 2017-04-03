@@ -1,5 +1,11 @@
 package com.spittr.web.repository;
 
-public class SpittleRepository {
+import java.util.List;
+
+import com.spittr.web.bean.Spittle;
+
+public interface SpittleRepository {
+
+	public List<Spittle> findSpittles(long max, int count);
 
 }
