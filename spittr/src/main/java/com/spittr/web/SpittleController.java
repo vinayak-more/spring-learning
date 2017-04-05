@@ -22,7 +22,8 @@ public class SpittleController {
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public String spittles(Model model){
-		model.addAttribute(repository.findSpittles(Long.MAX_VALUE, 20));
+		System.out.println("SpittleController.spittles()");
+		model.addAttribute("spittleList",repository.findSpittles(Long.MAX_VALUE, 20));
 		return "spittles";
 	}
 
