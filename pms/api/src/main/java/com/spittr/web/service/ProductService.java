@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spittr.web.bean.Product;
-import com.spittr.web.repository.impl.jpa.ProductRepository;
+import com.spittr.web.repository.jpa.ProductRepository;
 
 /**
  * @author Vinayak More

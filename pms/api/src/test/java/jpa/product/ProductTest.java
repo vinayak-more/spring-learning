@@ -1,4 +1,4 @@
-package product;
+package jpa.product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.spittr.config.PersistenceContext;
 import com.spittr.config.RootConfig;
 import com.spittr.web.bean.Product;
-import com.spittr.web.repository.impl.jpa.ProductRepository;
+import com.spittr.web.repository.jpa.ProductRepository;
 import com.spittr.web.service.ProductService;
 import com.spittr.webapi.controller.ProductController;
 

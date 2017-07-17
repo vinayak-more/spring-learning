@@ -9,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.stereotype.Component;
-
 /**
  * @author Vinayak More
  *
@@ -18,7 +16,6 @@ import org.springframework.stereotype.Component;
  * 
  * 
  */
-@Component
 @Entity
 @Table(name = "product")
 public class Product implements Serializable {

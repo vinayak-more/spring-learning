@@ -27,7 +27,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @Configuration
 @PropertySource("classpath:application.properties")
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = {"com.spittr.web.repository.impl.jpa"})
+@EnableJpaRepositories(basePackages = {"com.spittr.web.repository.jpa"})
 public class PersistenceContext {
     @Autowired
     Environment env;

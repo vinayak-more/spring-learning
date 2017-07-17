@@ -1,4 +1,4 @@
-package com.spittr.web.repository.impl.jpa;
+package com.spittr.web.repository.jpa;
 
 import java.util.List;
 

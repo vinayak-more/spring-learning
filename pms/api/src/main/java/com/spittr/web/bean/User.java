@@ -73,4 +73,10 @@ public class User {
         this.contactNumber = contactNumber;
     }
 
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", sellerId=" + sellerId + ", name=" + name + ", address=" + address
+                + ", contactNumber=" + contactNumber + "]";
+    }
+
 }
