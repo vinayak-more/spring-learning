@@ -3,11 +3,16 @@ package com.spittr.web.bean;
 import java.util.Date;
 
 public class Spittle {
-	private final Long Id;
+	private Long Id;
 	private final String message;
 	private final Date time;
 	private Double longitude;
 	private Double latitude;
+
+	public Spittle(Long id, String message, Date time) {
+		this(message,time);
+		this.Id = id;
+	}
 
 	public Spittle(String message, Date time) {
 		this(message, time, null, null);
