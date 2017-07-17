@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -45,6 +46,38 @@ public class ProductTest {
         List<Product> productList = service.getProductBySellerId(1L);
         System.out.println(productList);
         Assert.assertNotNull(productList);
+    }
+    @Ignore
+    @Test
+    public void saveAndDeleteProduct() {
+        Product product = getTestProduct();
+        Product productEntity = service.save(product);
+        System.out.println("**********************************");
+        System.out.println("Product Entity=" + productEntity);
+        Assert.assertNotNull(productEntity);
+        service.delete(productEntity);
+        Assert.assertNull(service.getProductById(productEntity.getId()));
+    }
+    
+    @Test
+    public void updateProduct(){
+        Product product=service.getProductById(1);
+        product.setName(product.getName()+" updated");
+        Product productEntity = service.save(product);
+        System.out.println("**********************************");
+        System.out.println("Product Entity=" + productEntity);
+        Assert.assertNotNull(productEntity);
+    }
+
+
+
+    private Product getTestProduct() {
+        Product product = new Product();
+        product.setName("Test Product");
+        product.setPrice(2500);
+        product.setSellerId(1L);
+        product.setHeight(5);
+        return product;
     }
 
     public void testProductBySellerId() throws Exception {
