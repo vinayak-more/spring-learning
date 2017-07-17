@@ -1,3 +1,0 @@
-INDEX VERSION 1.126
-E:\SpringProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2918049978.index
-\spittr\src\main\java
