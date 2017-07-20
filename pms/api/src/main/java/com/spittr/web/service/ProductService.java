@@ -24,20 +24,28 @@ public class ProductService {
         this.repository = repository;
     }
 
+    public List<Product> getAllProducts() {
+        return repository.findAll();
+    }
+
     public List<Product> getProductBySellerId(long sellerId) {
         return repository.findBySellerId(sellerId);
 
     }
-    
+
     public Product getProductById(long productId) {
         return repository.findOne(productId);
+    }
+    
+    public List<Product> getProductsByName(String productName){
+        return repository.findByNameContaining(productName);
     }
 
     public Product save(Product product) {
         return repository.save(product);
     }
-    
-    public void delete(Product product){
+
+    public void delete(Product product) {
         repository.delete(product);
     }
 }

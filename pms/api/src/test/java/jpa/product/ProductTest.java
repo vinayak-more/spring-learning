@@ -22,7 +22,7 @@ import com.spittr.config.RootConfig;
 import com.spittr.web.bean.Product;
 import com.spittr.web.repository.jpa.ProductRepository;
 import com.spittr.web.service.ProductService;
-import com.spittr.webapi.controller.ProductController;
+import com.spittr.webapi.controller.ProductRestController;
 
 /**
  * @author Vinayak More
@@ -87,7 +87,7 @@ public class ProductTest {
         Mockito.when(repository.findBySellerId(1L)).thenReturn(expectedSpittles);
         ProductService service = new ProductService(repository);
 
-        ProductController controller = new ProductController(service);
+        ProductRestController controller = new ProductRestController(service);
 
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
         mockMvc.perform(MockMvcRequestBuilders.get("/bysellerid/1")).andExpect(

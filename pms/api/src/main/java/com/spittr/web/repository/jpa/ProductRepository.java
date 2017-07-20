@@ -14,5 +14,10 @@ import com.spittr.web.bean.Product;
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
     public List<Product> findBySellerId(Long sellerId);
+    
+    public List<Product> findAll();
+    
+    public List<Product> findByNameContaining(String Name);
+    
 }
 

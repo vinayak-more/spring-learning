@@ -20,12 +20,12 @@ import com.spittr.web.service.ProductService;
  */
 @RestController
 @RequestMapping("/product")
-public class ProductController {
+public class ProductRestController {
 
     private ProductService service;
 
     @Autowired
-    public ProductController(ProductService service) {
+    public ProductRestController(ProductService service) {
         this.service = service;
     }
 
