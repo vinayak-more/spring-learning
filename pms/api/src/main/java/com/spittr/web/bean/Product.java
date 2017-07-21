@@ -44,7 +44,7 @@ public class Product implements Serializable {
     @Column(name = "image_path", length = 10000)
     private String imagePath;
 
-    @NotNull(message = "{productHeight.digits}")
+    @NotNull(message = "{productHeight.required}")
     @Column(name = "height")
     private Double height;
 
@@ -54,7 +54,7 @@ public class Product implements Serializable {
     @Column(name = "width")
     private Double width;
 
-    @NotNull(message = "{productPrice.digits}")
+    @NotNull(message = "{productPrice.required}")
     @Column(name = "price", nullable = false)
     private Double price;
 

@@ -15,7 +15,9 @@
 		Product	Height: <sf:input path="height" />
 		<sf:errors path="height"></sf:errors>
 		Product	Length: <sf:input path="length" /> 
-		Product Width: <sf:input path="width" />  
+		<sf:errors path="length"></sf:errors>
+		Product Width: <sf:input path="width" />
+		<sf:errors path="width"></sf:errors>  
 		Product Price: <sf:input path="price" /> 
 		<sf:errors path="price"></sf:errors>
 		Product Description: <sf:textarea path="description" />
