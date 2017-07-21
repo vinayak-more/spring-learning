@@ -30,15 +30,17 @@ public class UserController {
         return "users";
     }
 
-    @RequestMapping(value = "/bysellerid/{sellerId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/search/sellerid/{sellerId}", method = RequestMethod.GET)
     public String getAllUserBySellerId(@PathVariable Long sellerId, Model model) {
         model.addAttribute("userList", service.getAllUsersBySellerId(sellerId));
         return "users";
     }
 
-    @RequestMapping(value = "/byname/{name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/search/name/{name}", method = RequestMethod.GET)
     public String getAllUserByName(@PathVariable String name, Model model) {
         model.addAttribute("userList", service.searchUsersByName(name));
         return "users";
     }
+    
+    
 }
