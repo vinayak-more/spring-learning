@@ -1,12 +1,16 @@
 package com.spittr.web.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.spittr.web.bean.Product;
 import com.spittr.web.service.ProductService;
 
 /**
@@ -32,9 +36,9 @@ public class ProductController {
         return "products";
     }
 
-    @RequestMapping(value = "/{productId}", method = RequestMethod.GET)
-    public String getProductById(@PathVariable long productId, Model model) {
-        model.addAttribute("product", service.getProductById(productId));
+    @RequestMapping(value = "/byId/{productId}", method = RequestMethod.GET)
+    public String getProductById(@PathVariable String productId, Model model) {
+        model.addAttribute("product", service.getProductByProductId(productId));
         return "product";
     }
 
@@ -44,5 +48,22 @@ public class ProductController {
         model.addAttribute("productList", service.getProductsByName(productName));
         return "product-found";
     }
-    
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String addProductForm(Model model) {
+        model.addAttribute("product", new Product());
+        return "addProduct";
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String addProduct(@Valid Product product, Errors errors) {
+        System.out.println(product);
+        System.out.println(errors);
+        if (errors.hasErrors()) {
+            return "addProduct";
+        }
+        service.save(product);
+        return "redirect:/products";
+    }
+
 }

@@ -47,6 +47,7 @@ public class ProductTest {
         System.out.println(productList);
         Assert.assertNotNull(productList);
     }
+
     @Ignore
     @Test
     public void saveAndDeleteProduct() {
@@ -56,13 +57,13 @@ public class ProductTest {
         System.out.println("Product Entity=" + productEntity);
         Assert.assertNotNull(productEntity);
         service.delete(productEntity);
-        Assert.assertNull(service.getProductById(productEntity.getId()));
+        Assert.assertNull(service.getProductByProductId(productEntity.getId().toString()));
     }
-    
+
     @Test
-    public void updateProduct(){
-        Product product=service.getProductById(1);
-        product.setName(product.getName()+" updated");
+    public void updateProduct() {
+        Product product = service.getProductByProductId("Product_1");
+        product.setName(product.getName() + " updated");
         Product productEntity = service.save(product);
         System.out.println("**********************************");
         System.out.println("Product Entity=" + productEntity);
@@ -74,9 +75,9 @@ public class ProductTest {
     private Product getTestProduct() {
         Product product = new Product();
         product.setName("Test Product");
-        product.setPrice(2500);
+        product.setPrice(2500D);
         product.setSellerId(1L);
-        product.setHeight(5);
+        product.setHeight(5D);
         return product;
     }
 
@@ -101,7 +102,7 @@ public class ProductTest {
             product.setId(i);
             product.setSellerId(1L);
             product.setName("Product " + i);
-            product.setPrice(i * 1000);
+            product.setPrice(i * 1000D);
             products.add(product);
         }
         return products;

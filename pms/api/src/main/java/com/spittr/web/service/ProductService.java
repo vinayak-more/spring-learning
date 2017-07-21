@@ -33,8 +33,8 @@ public class ProductService {
 
     }
 
-    public Product getProductById(long productId) {
-        return repository.findOne(productId);
+    public Product getProductByProductId(String productId) {
+        return repository.findByProductId(productId);
     }
     
     public List<Product> getProductsByName(String productName){

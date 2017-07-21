@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * @author Vinayak More
@@ -29,12 +31,20 @@ public class Product implements Serializable {
     @Column(name = "seller_id")
     private Long sellerId;
 
+    @NotNull
+    @Size(min = 5, max = 1000, message = "{productName.size}")
     @Column(name = "name", nullable = false, length = 1000)
     private String name;
+
+    @NotNull
+    @Size(min = 1, max = 1000, message = "{productId.size}")
+    @Column(name = "product_id", nullable = false, length = 100)
+    private String productId;
 
     @Column(name = "image_path", length = 10000)
     private String imagePath;
 
+    @NotNull(message = "{productHeight.digits}")
     @Column(name = "height")
     private Double height;
 
@@ -44,6 +54,7 @@ public class Product implements Serializable {
     @Column(name = "width")
     private Double width;
 
+    @NotNull(message = "{productPrice.digits}")
     @Column(name = "price", nullable = false)
     private Double price;
 
@@ -74,6 +85,14 @@ public class Product implements Serializable {
         this.name = name;
     }
 
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
     public String getImagePath() {
         return imagePath;
     }
@@ -82,35 +101,35 @@ public class Product implements Serializable {
         this.imagePath = imagePath;
     }
 
-    public double getHeight() {
+    public Double getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(Double height) {
         this.height = height;
     }
 
-    public double getLength() {
+    public Double getLength() {
         return length;
     }
 
-    public void setLength(double length) {
+    public void setLength(Double length) {
         this.length = length;
     }
 
-    public double getWidth() {
+    public Double getWidth() {
         return width;
     }
 
-    public void setWidth(double width) {
+    public void setWidth(Double width) {
         this.width = width;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -124,9 +143,9 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return "Product [id=" + id + ", sellerId=" + sellerId + ", name=" + name + ", imagePath=" + imagePath
-                + ", height=" + height + ", length=" + length + ", width=" + width + ", price=" + price
-                + ", description=" + description + "]";
+        return "Product [id=" + id + ", sellerId=" + sellerId + ", name=" + name + ", productId=" + productId
+                + ", imagePath=" + imagePath + ", height=" + height + ", length=" + length + ", width=" + width
+                + ", price=" + price + ", description=" + description + "]";
     }
 
 }
