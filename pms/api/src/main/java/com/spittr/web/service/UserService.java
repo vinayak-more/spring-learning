@@ -39,4 +39,16 @@ public class UserService {
         return repository.getUserByName(name);
     }
 
+    public List<User> getAllUsersBySellerId(Long sellerId) {
+        return repository.getUserBySellerId(sellerId);
+    }
+
+    public List<User> getAllUsers() {
+        return repository.findAll();
+    }
+
+    public List<User> searchUsersByName(String name) {
+        return repository.getUserByNameContaining(name);
+    }
+
 }

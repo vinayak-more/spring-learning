@@ -6,7 +6,7 @@
 <%@ page session="false"%>
 </head>
 <body>
-	<h3> <s:message code="add.product.title" />  </h3>
+    <h3> <s:message code="add.product.title" /> </h3>
 	<sf:form method="post" action="add" commandName="product">
 		Product ID: <sf:input path="productId" />
 		Name: <sf:input path="name" />
