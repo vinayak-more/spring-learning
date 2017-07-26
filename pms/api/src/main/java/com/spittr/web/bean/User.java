@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * @author Vinayak More
@@ -24,12 +26,16 @@ public class User {
     @Column(name = "seller_id")
     private Long sellerId;
 
+    @NotNull(message="{user.name.notnull}")
+    @Size(min = 1, max = 1000, message = "{user.name.notnull}")
     @Column(name = "name", nullable = false, length = 1000)
     private String name;
 
     @Column(name = "address", length = 25000)
     private String address;
 
+    @NotNull(message = "{user.contactnumber.notnull}")
+    @Size(min = 1, max = 11, message = "{user.contactnumber.valid}")
     @Column(name = "contact_number")
     private String contactNumber;
 

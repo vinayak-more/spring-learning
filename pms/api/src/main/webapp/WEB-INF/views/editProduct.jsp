@@ -11,7 +11,7 @@
 		${product.productId}
 	</h3>
 	<sf:form method="post"
-		action="${pageContext.request.contextPath}/products/edit/add"
+		action="${pageContext.request.contextPath}/products/edit"
 		modelAttribute="product">
 		<sf:hidden path="id" />
 		Product ID: <sf:input path="productId" />

@@ -72,7 +72,7 @@ public class ProductController {
         model.addAttribute("product", product);
         return "editProduct";
     }
-    @RequestMapping(value = "/edit/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public String editProduct(@Valid Product product, Errors errors) {
         System.out.println(product);
         System.out.println(errors);

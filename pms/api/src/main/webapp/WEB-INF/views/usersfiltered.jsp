@@ -6,11 +6,11 @@
 <%@ page session="false"%>
 </head>
 <body>
-	<c:if test="${empty userList}">
-	No registered Users
+	<c:if test="${ empty userList}">
+	No Users found for giver Search Criteria
 	</c:if>
 	<c:if test="${ not empty userList}">
-		<h3>All Users</h3>
+		<h3>Users found for given search criteria</h3>
 		<table border="1">
 			<thead>
 				<tr>
@@ -24,15 +24,11 @@
 					<tr>
 						<td><c:out value=" ${user.name}" /></td>
 						<td><c:out value=" ${user.contactNumber}" /></td>
-						<td><a href="<c:url value="/users/edit/${user.id}"/>">
-								Edit</a></td>
+						<td><a href="<c:url value="/users/edit/${user.id}"/>"> Edit</a></td>
 					</tr>
-
-
 				</c:forEach>
 			</tbody>
 		</table>
 	</c:if>
-	<a href="<c:url value="/users/add"/>">Add User</a>
 </body>
 </html>
