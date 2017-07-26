@@ -65,5 +65,21 @@ public class ProductController {
         service.save(product);
         return "redirect:/products";
     }
-
+    
+    @RequestMapping(value="/edit/{productId}" , method=RequestMethod.GET)
+    public String editProduct(@PathVariable String productId,Model model){
+        Product product = service.getProductByProductId(productId);
+        model.addAttribute("product", product);
+        return "editProduct";
+    }
+    @RequestMapping(value = "/edit/add", method = RequestMethod.POST)
+    public String editProduct(@Valid Product product, Errors errors) {
+        System.out.println(product);
+        System.out.println(errors);
+        if (errors.hasErrors()) {
+            return "editProduct";
+        }
+        service.save(product);
+        return "redirect:/products";
+    }
 }

@@ -16,7 +16,8 @@ create table IF NOT EXISTS product(
 	description varchar(20000),
 	CONSTRAINT fk_product_user FOREIGN KEY (seller_id)
   	REFERENCES user(id)
-  	ON DELETE CASCADE
+  	ON DELETE CASCADE,
+  	UNIQUE (product_id)
 );
 
 create table IF NOT EXISTS user(
